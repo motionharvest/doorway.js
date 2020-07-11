@@ -11,8 +11,21 @@
 		}
 		.masthead {
 			padding-top: 100px;
+			height: 250px;
+			background-image: url(http://placeimg.com/850/250/nature);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
-		.scroll > div {
+		.masthead--mobile {
+			height: 500px;
+		}
+		.main-content {
+			box-sizing: border-box;
+			border: solid 1px salmon;
+			margin: 2em;
+		}
+		.main-content > div {
 			margin: 10px 0px;
 			padding: 20px;
 		}
@@ -23,22 +36,18 @@
 			width: 100%;
 			height: 100px;
 			padding: 5px;
-			background-color: pink;
+			background-color: salmon;
 		}
 	</style>
 </head>
 
 <body>
 
-	<div class="pinned-nav" data-doorway>
-		Ready
-	</div>
+	<div class="pinned-nav" data-doorway></div>
 
-	<div class="masthead">
-		<img src="https://via.placeholder.com/850x250"/>
-	</div>
+	<div class="masthead"></div>
 
-	<section class="scroll" data-doorway-push>
+	<section class="main-content" data-doorway-push>
 		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim veniam minus aliquam dolorum libero aperiam, cum, soluta quaerat deleniti itaque, quis dolorem quae provident suscipit non consequatur perspiciatis autem iusto.</div>
 		<div>Saepe amet dolor, ipsam earum mollitia beatae aperiam vitae eaque asperiores eius, rem maxime tenetur quo est dolorem neque! Voluptas accusamus unde corporis tenetur, voluptatum hic nostrum repellat aliquam quia!</div>
 		<div>Officiis eum dignissimos similique rem illum saepe quasi, doloribus molestias, quibusdam, quia aspernatur tempora. Ullam aut provident quos magnam, omnis dolore sint autem aperiam! Exercitationem aliquid, rerum voluptas aspernatur doloremque!</div>
@@ -92,8 +101,19 @@
 	</section>
 	<script src="doorway.min.js"></script>
 	<script>
-		var dw = new Doorway();
-		dw.init();
+		var dw = new Doorway({
+			scrub: function(perc) {
+				console.log(perc);
+			}
+		});
+		
+
+		setTimeout(function(){
+			document.querySelector('.masthead').classList.add('masthead--mobile');
+			dw.refresh()
+		}, 5000);
+
+
 	</script>
 	<script id="__bs_script__">//<![CDATA[
 		document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
