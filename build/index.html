@@ -101,19 +101,7 @@
 	</section>
 	<script src="doorway.min.js"></script>
 	<script>
-		var dw = new Doorway({
-			scrub: function(perc) {
-				console.log(perc);
-			}
-		});
-		
-
-		setTimeout(function(){
-			document.querySelector('.masthead').classList.add('masthead--mobile');
-			dw.refresh()
-		}, 5000);
-
-
+		var dw = new Doorway();
 	</script>
 	<script id="__bs_script__">//<![CDATA[
 		document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));

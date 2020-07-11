@@ -158,7 +158,7 @@
 	
 			}
 			
-			config.header.style.top = y * -hi;
+			config.header.style.top = (y * -hi) + "px";
 		});
 
 		return {
