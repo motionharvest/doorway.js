@@ -30,7 +30,7 @@ module.exports = function() {
             message: '<%= error.message %> ?! Is this some kind of joke?'
         }))
         .pipe(sourcemaps.init({
-            loadMaps: true
+            loadMaps: false
         }))
         .pipe(sourcemaps.write('../dev/maps'))
         .pipe(rename("doorway.min.js"))
