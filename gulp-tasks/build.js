@@ -29,10 +29,10 @@ module.exports = function() {
             title: 'They pay you to do this?',
             message: '<%= error.message %> ?! Is this some kind of joke?'
         }))
-        .pipe(sourcemaps.init({
-            loadMaps: false
-        }))
-        .pipe(sourcemaps.write('../dev/maps'))
+        // .pipe(sourcemaps.init({
+        //     loadMaps: true
+        // }))
+        // .pipe(sourcemaps.write('../dev/maps'))
         .pipe(rename("doorway.min.js"))
         .pipe(gulp.dest('build'));
 
