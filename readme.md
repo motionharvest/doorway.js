@@ -10,3 +10,6 @@ npm install
 ```
 npm start
 ```
+
+## Project Todos
++ Write documentation like https://wicky.nillia.ms/headroom.js/

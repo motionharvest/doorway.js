@@ -158,7 +158,7 @@
 	
 			}
 			
-			config.header.style.top = (y * -hi) + "px";
+			config.header.style.transform = "translateY(" + (y * -hi) + "px)";
 		});
 
 		return {
